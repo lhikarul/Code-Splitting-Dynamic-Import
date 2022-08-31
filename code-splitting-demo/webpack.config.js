@@ -42,6 +42,7 @@ module.exports = {
         },
         default: {
           name: 'default',
+          // 至少要兩個 bundle 中都會用到的 chunk，我們把它打包成 defult.js 的 bundle
           minChunks: 2,
           reuseExistingChunk: true,
           enforce: true,
@@ -50,4 +51,22 @@ module.exports = {
       },
     },
   },
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: 'all',
+  //     cacheGroups: {
+  //       vendors: {
+  //         test: /[\\/]node_modules[\\/]/,
+  //         name: 'vendors',
+  //       },
+  //       default: {
+  //         name: 'default',
+  //         minChunks: 2,
+  //         reuseExistingChunk: true,
+  //         enforce: true,
+  //         priority: -20,
+  //       },
+  //     },
+  //   },
+  // },
 };
